@@ -1,0 +1,5 @@
+{:paths   ["src"]
+ :aliases {:test
+           {:extra-paths ["test"]
+            :extra-deps
+            {lambdaisland/kaocha-cljs {:mvn/version "0.0-71"}}}}}
