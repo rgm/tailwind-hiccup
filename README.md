@@ -27,7 +27,7 @@ Add tailwind-cljs as a dependency, eg. for tools.deps projects
 {:paths [,,,]
  :deps {,,,
         rgm/tailwind-cljs {:git/url "https://github.com/rgm/tailwind-cljs"
-                           :sha "SHA1-OF-CURRENT-MASTER"}}
+                           :sha "6ef1080289c3e740af3bd650b37f6f7594dc050a"}}
 ```
 
 ## API
