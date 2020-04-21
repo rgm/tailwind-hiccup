@@ -18,6 +18,18 @@ elimination][purgecss] performance from PurgeCSS, since any Tailwind class name
 strings present in unused components will have been dropped from the JS bundle
 along with the component.
 
+## Getting started
+
+Add tailwind-cljs as a dependency, eg. for tools.deps projects
+
+```clojure
+;; deps.edn
+{:paths [,,,]
+ :deps {,,,
+        rgm/tailwind-cljs {:git/url "https://github.com/rgm/tailwind-cljs"
+                           :sha "SHA1-OF-CURRENT-MASTER"}}
+```
+
 ## API
 
 Inspired by [`stylefy.core/use-style`][stylefy], this library provides a
@@ -25,6 +37,8 @@ function `tw` that gives a easy-to-spot way to snap together collections of
 utility classes in Hiccup props:
 
 ```clojure
+(require '[tw-cljs.core :refer [tw]]
+
 (def color-transition [:transition-colors :ease-in-out])
 (def short-duration [:duration-300])
 (def hover-colors ["hover:text-white" "hover:bg-red-500"])
