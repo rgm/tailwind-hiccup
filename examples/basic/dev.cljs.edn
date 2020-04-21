@@ -1,0 +1,4 @@
+^{:css-dirs   ["resources/public"]
+  :watch-dirs ["src"]}
+{:main        tw-cljs-example.core
+ :output-to   "resources/public/app.js"}

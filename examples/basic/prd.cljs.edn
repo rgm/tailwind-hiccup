@@ -1,0 +1,4 @@
+^{:watch-dirs   ["src"]} ;; fw uses this to find sources?
+{:optimizations :advanced
+ :infer-externs true
+ :output-to     "resources/public/app.js"}

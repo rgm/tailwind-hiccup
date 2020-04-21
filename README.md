@@ -30,6 +30,9 @@ Add tailwind-cljs as a dependency, eg. for tools.deps projects
                            :sha "6ef1080289c3e740af3bd650b37f6f7594dc050a"}}
 ```
 
+Setting up the css build can be a little complex. See the [basic usage
+example][basic-example].
+
 ## API
 
 Inspired by [`stylefy.core/use-style`][stylefy], this library provides a
@@ -58,3 +61,4 @@ utility classes in Hiccup props:
 [rum]: https://github.com/tonsky/rum
 [stylefy]: https://github.com/Jarzka/stylefy
 [purgecss]: https://tailwindcss.com/docs/controlling-file-size#removing-unused-css
+[basic-example]: https://github.com/rgm/tailwind-cljs/tree/master/examples/basic

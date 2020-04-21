@@ -1,0 +1,5 @@
+{:paths ["src" "resources" "target"]
+ :deps {com.bhauman/figwheel-main {:mvn/version "0.2.4-20200416.204934-2"}
+        rgm/tailwind-cljs {:git/url "https://github.com/rgm/tailwind-cljs"
+                           :sha "6ef1080289c3e740af3bd650b37f6f7594dc050a"}
+        rum {:mvn/version "0.11.4"}}}
