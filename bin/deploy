@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+clojure -A:build -m deps-deploy.deps-deploy deploy tailwind-cljs.jar true
+

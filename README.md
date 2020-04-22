@@ -1,3 +1,5 @@
+[![Clojars Project](https://img.shields.io/clojars/v/rgm/tailwind-cljs.svg)](https://clojars.org/rgm/tailwind-cljs)
+
 # tailwind-cljs
 
 tailwindcss + clojurescript = 👍👍.

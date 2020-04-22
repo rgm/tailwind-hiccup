@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+clojure -A:build -m hf.depstar.jar tailwind-cljs.jar
