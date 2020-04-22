@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/clojure:openjdk-11-tools-deps-node-browsers
+    working_directory: ~/repo
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "deps.edn" }}-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: clojure -Rtest -Stree > /dev/null
+      - run: make node_modules
+      - save_cache:
+          paths:
+            - ~/.m2
+            - ~/repo/node_modules
+          key: v1-dependencies-{{ checksum "deps.edn" }}-{{ checksum "package.json" }}
+      - run: make test
