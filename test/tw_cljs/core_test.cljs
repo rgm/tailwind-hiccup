@@ -20,3 +20,8 @@
   (let [f (fn [])]
     (is (= {:on-click f :class ["font-bold" "text-center"]}
            (sut/tw [:font-bold] [:text-center] {:on-click f})))))
+
+(deftest multi-with-props-and-prefix
+  (let [f (fn [])]
+    (is (= {:on-click f :class ["tw-font-bold" "tw-text-center"]}
+           (sut/twp "tw-" [:font-bold] [:text-center] {:on-click f})))))
