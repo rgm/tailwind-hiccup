@@ -9,14 +9,19 @@
 
 (deftest single-with-props
   (let [f (fn [])]
-    (is {:on-click f :class ["font-bold"]}
-        (sut/tw [:font-bold] {:on-click f}))))
+    (is (= {:on-click f :class ["font-bold"]}
+           (sut/tw [:font-bold] {:on-click f})))))
 
 (deftest multi
-  (is {:class ["font-bold" "mt-4" "hover:font-normal"]}
-      (sut/tw [:font-bold] [:mt-4 "hover:font-normal"])))
+  (is (= {:class ["font-bold" "mt-4" "hover:font-normal"]}
+         (sut/tw [:font-bold] [:mt-4 "hover:font-normal"]))))
 
 (deftest multi-with-props
   (let [f (fn [])]
-    (is {:on-click f :class ["font-bold" "text-center"]}
-        (sut/tw [:font-bold] [:text-center] {:on-click f}))))
+    (is (= {:on-click f :class ["font-bold" "text-center"]}
+           (sut/tw [:font-bold] [:text-center] {:on-click f})))))
+
+(deftest multi-with-props-and-prefix
+  (let [f (fn [])]
+    (is (= {:on-click f :class ["tw-font-bold" "tw-text-center"]}
+           (sut/twp "tw-" [:font-bold] [:text-center] {:on-click f})))))
