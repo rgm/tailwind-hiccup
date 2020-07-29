@@ -1,4 +1,6 @@
-(ns tw-cljs.core)
+(ns tw-cljs.core
+  (:require
+   [clojure.string :as string]))
 
 (defn- tw->str [x] (if (keyword? x) (name x) (str x)))
 
@@ -24,7 +26,18 @@
                         (mapv tw->str))]
     (merge-with merge {:class classes} props)))
 
-(defn- tw->prefixed-str [prefix x] (str prefix (tw->str x)))
+(defn- tw->prefixed-str
+  "Convert keyword or string to a properly-prefixed class string. Just tacks the
+   prefix on for non-variant classes. For variant classes, eg. hover:font-bold,
+   we have to nestle the prefix between the variant and the base class, eg.
+   hover:xx-font-bold if prefix is xx-."
+  [prefix x]
+  (let [s (tw->str x)
+        variant? #(string/includes? % ":")]
+    (if (variant? s)
+      (let [[variant base] (string/split s #":" 2)]
+        (str variant ":" prefix base))
+      (str prefix s))))
 
 (defn twp
   "Similar to `tw`, but accepts an initial prefix to apply such that tailwind styles
