@@ -25,3 +25,12 @@
   (let [f (fn [])]
     (is (= {:on-click f :class ["tw-font-bold" "tw-text-center"]}
            (sut/twp "tw-" [:font-bold] [:text-center] {:on-click f})))))
+
+(deftest tw->prefixed-str-test
+  (let [f #'sut/tw->prefixed-str] ;; suppress not-public warning
+    (is (= "tw-font-bold" (f "tw-" "font-bold")))
+    (is (= "hover:tw-font-bold" (f "tw-" "hover:font-bold")))))
+
+(deftest prefix-with-variants
+  (is (= {:class ["hover:tw-font-bold" "lg:tw-bg-red-500"]}
+         (sut/twp "tw-" ["hover:font-bold" "lg:bg-red-500"]))))
