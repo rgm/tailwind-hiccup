@@ -1,5 +1,5 @@
 test: node_modules
-	clojure -A:test -m kaocha.runner
+	clojure -A:test -M -m kaocha.runner
 .PHONY: test
 
 node_modules: package.json
