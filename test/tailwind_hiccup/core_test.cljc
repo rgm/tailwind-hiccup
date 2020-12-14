@@ -1,7 +1,7 @@
-(ns tw-cljs.core-test
+(ns tailwind-hiccup.core-test
   (:require
    [clojure.test :as t :refer [deftest is]]
-   [tw-cljs.core :as sut]))
+   [tailwind-hiccup.core :as sut]))
 
 (deftest single-no-props
   (is (= {:class ["font-bold"]}

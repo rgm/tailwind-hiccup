@@ -1,4 +1,4 @@
-(ns tw-cljs.core
+(ns tailwind-hiccup.core
   (:require
    [clojure.string :as string]))
 

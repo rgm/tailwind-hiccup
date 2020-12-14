@@ -2,8 +2,9 @@
  :aliases {:test
            {:extra-paths ["test"]
             :extra-deps
-            {lambdaisland/kaocha-cljs {:mvn/version "0.0-71"}}}
+            {lambdaisland/kaocha {:mvn/version "1.0.732"}
+             lambdaisland/kaocha-cljs {:mvn/version "0.0-71"}}}
            :build
            {:extra-deps
             {seancorfield/depstar {:mvn/version "1.0.94"}
-             deps-deploy {:mvn/version "0.0.9"}}}}}
+             deps-deploy/deps-deploy {:mvn/version "0.0.9"}}}}}

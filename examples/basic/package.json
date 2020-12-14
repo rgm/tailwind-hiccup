@@ -1,16 +1,16 @@
 {
-  "name": "tailwind-cljs-basic-example",
+  "name": "tailwind-hiccup-basic-example",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/rgm/tailwind-cljs/examples/basic",
+  "repository": "https://github.com/rgm/tailwind-hiccup/examples/basic",
   "author": "Ryan McCuaig <ryan@ryanmccuaig.net>",
   "license": "EPL-2.0",
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.0.6",
-    "@tailwindcss/ui": "^0.1.3",
+    "autoprefixer": "^10.1.0",
     "cssnano": "^4.1.10",
-    "postcss": "^7.0.21",
-    "postcss-cli": "^6.1.3",
-    "tailwindcss": "^1.3.4"
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
   }
 }
