@@ -1,8 +1,8 @@
 {
-  "name": "tailwind-cljs-basic-example",
+  "name": "tailwind-hiccup-basic-example",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/rgm/tailwind-cljs/examples/basic",
+  "repository": "https://github.com/rgm/tailwind-hiccup/examples/basic",
   "author": "Ryan McCuaig <ryan@ryanmccuaig.net>",
   "license": "EPL-2.0",
   "dependencies": {

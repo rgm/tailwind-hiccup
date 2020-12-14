@@ -1,7 +1,7 @@
-(ns ^:figwheel-hooks tw-cljs-example.core
+(ns ^:figwheel-hooks tailwind-hiccup-example.core
   (:require
-   [rum.core     :as rum]
-   [tw-cljs.core :refer [tw]]))
+   [rum.core             :as rum]
+   [tailwind-hiccup.core :refer [tw]]))
 
 (rum/defc
  TestLayout
