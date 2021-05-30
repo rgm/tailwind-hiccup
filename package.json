@@ -1,5 +1,5 @@
 {
   "devDependencies": {
-    "ws": "^7.4.1"
+    "ws": "^7.4.6"
   }
 }
