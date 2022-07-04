@@ -34,3 +34,11 @@
 (deftest prefix-with-variants
   (is (= {:class ["hover:tw-font-bold" "lg:tw-bg-red-500"]}
          (sut/twp "tw-" ["hover:font-bold" "lg:bg-red-500"]))))
+
+(deftest stacked-calls
+  (is (= {:class ["text-gray-500" "font-bold"]}
+         (sut/tw [:text-gray-500] (sut/tw [:font-bold])))))
+
+(deftest stacked-calls-prefix
+  (is (= {:class ["tw-text-gray-500" "tw-font-bold"]}
+         (sut/twp "tw-" [:text-gray-500] (sut/twp "tw-" [:font-bold])))))

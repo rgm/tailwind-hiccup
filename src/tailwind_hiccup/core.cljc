@@ -4,6 +4,8 @@
 
 (defn- tw->str [x] (if (keyword? x) (name x) (str x)))
 
+(defn- simplify-classes [x] (if (coll? x) (flatten x) x))
+
 (defn tw
   "Merge tailwind class collections into props. Gives the tailwind call sites a
    bit more meaning to spot/get a hold of them later.
@@ -24,7 +26,8 @@
         classes    (->> (if has-props? (butlast xs) xs)
                         (apply concat)
                         (mapv tw->str))]
-    (merge-with merge {:class classes} props)))
+    (-> (merge-with merge {:class classes} props)
+        (update :class simplify-classes))))
 
 (defn- tw->prefixed-str
   "Convert keyword or string to a properly-prefixed class string. Just tacks the
@@ -53,4 +56,5 @@
         classes    (->> (if has-props? (butlast xs) xs)
                         (apply concat)
                         (mapv (partial tw->prefixed-str prefix)))]
-    (merge-with merge {:class classes} props)))
+    (-> (merge-with merge {:class classes} props)
+        (update :class simplify-classes))))
